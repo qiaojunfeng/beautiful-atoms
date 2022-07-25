@@ -108,7 +108,7 @@ class Batoms(BaseCollection, ObjectGN):
             scale (float, optional):
                 Scale factor for all atoms. Defaults to 1.0.
             model_style (int, optional):
-                Enum in [0, 1, 2, 3]. Defaults to 0.
+                Enum in [0, 1, 2, 3, 4]. Defaults to 0.
             from_ase (ASE Atoms, optional):
                 Import structure from ASE. Defaults to None.
             from_pymatgen (Pymatgen structure, optional):
@@ -561,6 +561,8 @@ class Batoms(BaseCollection, ObjectGN):
             self.scale = 0.4
         elif int(model_style) == 3:
             self.scale = 0.0001
+        elif int(model_style) == 4:
+            self.scale = 0.4
         scale = np.ones(len(self))*self.scale
         self.set_attribute('scale', scale)
         self.coll.batoms.model_style = str(model_style)
@@ -1637,7 +1639,10 @@ class Batoms(BaseCollection, ObjectGN):
             self.bond.set_arrays(default_bond_datas.copy())
             return
         # self.set_attribute_with_indices('scale', mask, self.scale)
-        self.bond.hide = False
+        if self.model_style == 4:
+            self.bond.hide = True
+        else:
+            self.bond.hide = False
         self.boundary.hide = False
         self.bond.update()
 

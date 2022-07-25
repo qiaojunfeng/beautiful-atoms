@@ -269,7 +269,8 @@ class Bselect(bpy.types.PropertyGroup):
         items=(('0', "Space-filling", "Use ball"),
                ('1', "Ball-and-stick", "Use ball and stick"),
                ('2', "Polyhedral", "Use polyhedral"),
-               ('3', "Wireframe", "Use wireframe")),
+               ('3', "Wireframe", "Use wireframe"),
+               ('4', "Ball", "Use ball")),
         default='0')
     radius_style: EnumProperty(
         name="radius_style",
@@ -331,7 +332,8 @@ class BatomsCollection(bpy.types.PropertyGroup):
         items=(('0', "Space-filling", "Use ball"),
                ('1', "Ball-and-stick", "Use ball and stick"),
                ('2', "Polyhedral", "Use polyhedral"),
-               ('3', "Wireframe", "Use wireframe")),
+               ('3', "Wireframe", "Use wireframe"),
+               ('4', "Ball", "Use ball")),
         default='0')
 
     radius_style: EnumProperty(

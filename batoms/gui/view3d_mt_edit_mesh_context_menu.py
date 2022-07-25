@@ -31,6 +31,8 @@ class VIEW3D_MT_edit_mesh_context_batoms_model_style(Menu):
         op2.model_style = '2'
         op3 = layout.operator("batoms.apply_model_style_selected", text="Stick")
         op3.model_style = '3'
+        op3 = layout.operator("batoms.apply_model_style_selected", text="Ball")
+        op3.model_style = '4'
 
 
 

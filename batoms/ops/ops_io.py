@@ -32,7 +32,8 @@ class IMPORT_OT_batoms(Operator, ImportHelper):
         items=(('0', "Space-filling", "Use ball"),
                ('1', "Ball-and-stick", "Use ball and stick"),
                ('2', "Polyhedral", "Use polyhedral"),
-               ('3', "Stick", "Use stick")),
+               ('3', "Stick", "Use stick"),
+               ('4', "Ball", "Use ball")),
         default='0',)
 
     def draw(self, context):

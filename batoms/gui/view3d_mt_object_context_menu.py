@@ -27,6 +27,8 @@ class VIEW3D_MT_object_context_batoms_model_style(Menu):
         op2.model_style = "2"
         op3 = layout.operator("batoms.apply_model_style", text="Stick")
         op3.model_style = "3"
+        op3 = layout.operator("batoms.apply_model_style", text="Ball")
+        op3.model_style = "4"
 
 
 class VIEW3D_MT_object_context_batoms_radius_style(Menu):

@@ -301,6 +301,7 @@ class Bselect(bpy.types.PropertyGroup):
             ("1", "Ball-and-stick", "Use ball and stick"),
             ("2", "Polyhedral", "Use polyhedral"),
             ("3", "Wireframe", "Use wireframe"),
+            ('4', "Ball", "Use ball"),
         ),
         default="0",
     )
@@ -372,6 +373,7 @@ class BatomsCollection(bpy.types.PropertyGroup):
             ("1", "Ball-and-stick", "Use ball and stick"),
             ("2", "Polyhedral", "Use polyhedral"),
             ("3", "Wireframe", "Use wireframe"),
+            ('4', "Ball", "Use ball"),
         ),
         default="0",
     )

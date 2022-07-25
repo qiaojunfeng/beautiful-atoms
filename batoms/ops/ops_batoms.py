@@ -310,6 +310,7 @@ class ApplyModelStyle(OperatorBatoms):
             ("1", "Ball-and-stick", "Use ball"),
             ("2", "Polyhedral", "Use polyhedral"),
             ("3", "Stick", "Use stick"),
+            ('4', "Ball", "Use ball"),
         ],
         default="0",
     )
@@ -522,6 +523,7 @@ class ApplyModelStyleSelected(OperatorBatoms):
             ("1", "Ball-and-stick", "Use ball"),
             ("2", "Polyhedral", "Use polyhedral"),
             ("3", "Stick", "Use stick"),
+            ('4', "Ball", "Use ball"),
         ],
         default="0",
     )
@@ -540,6 +542,8 @@ class ApplyModelStyleSelected(OperatorBatoms):
             scale = 0.4
         elif int(self.model_style) == 3:
             scale = 0.0001
+        elif int(self.model_style) == 4:
+            scale = 0.4
         scale_array[indices] = scale
         batoms.set_model_style_array(model_style_array)
         batoms.set_attributes({"scale": scale_array})

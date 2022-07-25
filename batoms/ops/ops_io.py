@@ -31,6 +31,7 @@ class IMPORT_OT_batoms(Operator, ImportHelper):
             ("1", "Ball-and-stick", "Use ball and stick"),
             ("2", "Polyhedral", "Use polyhedral"),
             ("3", "Stick", "Use stick"),
+            ('4', "Ball", "Use ball"),
         ),
         default="0",
     )

@@ -23,6 +23,7 @@ model_style_items = [
     ("Ball-and-stick", "Ball-and-Stick", "", 1),
     ("Polyhedral", "Polyhedral", "", 2),
     ("Stick", "Stick", "", 3),
+    ("Ball", "Ball", "", 4),
 ]
 
 

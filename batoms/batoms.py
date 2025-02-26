@@ -1777,6 +1777,7 @@ class Batoms(BaseCollection, ObjectGN):
         self.draw_ball_and_stick()
         self.draw_polyhedra()
         self.draw_wireframe()
+        self.draw_ball()
 
     def draw_space_filling(self):
         # mask = np.where(self.model_style_array == 0, True, False)
@@ -1784,6 +1785,10 @@ class Batoms(BaseCollection, ObjectGN):
         self.boundary.update()
 
     def draw_ball_and_stick(self):
+        if self.model_style == 4:
+            # for ball style, do not add bonds
+            return
+
         mask = np.where(self.model_style_array >= 1, True, False)
         if not mask.any():
             from .bond.bond import default_bond_datas
@@ -1791,10 +1796,7 @@ class Batoms(BaseCollection, ObjectGN):
             self.bond.set_arrays(default_bond_datas.copy())
             return
         # self.set_attribute_with_indices('scale', mask, self.scale)
-        if self.model_style == 4:
-            self.bond.hide = True
-        else:
-            self.bond.hide = False
+        self.bond.hide = False
         self.boundary.hide = False
         self.bond.update()
 
@@ -1850,6 +1852,13 @@ class Batoms(BaseCollection, ObjectGN):
         # self.set_attribute_with_indices('show', mask, 0)
         self.set_attribute_with_indices("scale", mask, self.scale)
         # self.update(mask)
+
+    def draw_ball(self):
+        if self.model_style != 4:
+            return
+        # reduce the radius of atoms
+        self.scale = 0.4
+        self.draw_space_filling()
 
     def as_ase(self, local=True, with_attribute=True):
         """

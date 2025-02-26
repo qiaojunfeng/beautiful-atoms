@@ -317,7 +317,7 @@ class ObjectGN(BaseObject):
         name = "GeometryNodes_%s" % self.obj_name
         modifier = self.obj.modifiers.get(name)
         if modifier is None:
-            self.init_geometry_node_modifier()
+            modifier = self.init_geometry_node_modifier()
         return modifier
 
     def init_geometry_node_modifier(self, inputs=[]):
